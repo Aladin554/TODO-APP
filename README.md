@@ -102,4 +102,7 @@ Task deletion (DELETE /api/tasks/{id})
 Validation errors (e.g., missing title)
 
 
-![download](https://github.com/user-attachments/assets/a98df24d-ed50-4768-ad9f-639f6f3e8b6e)
+<img width="938" alt="image" src="https://github.com/user-attachments/assets/ecaa49db-5d34-4eea-b3ff-6050b6674240" />
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/d8efa9ab-4442-4303-9dca-3d2532f49112" />
+
+
