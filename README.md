@@ -21,8 +21,8 @@ Postman (for API testing)
 3.Installation
 
 Clone the repository:
-git clone https://github.com/yourusername/todo-list-app.git
-cd todo-list-app
+git clone https://github.com/Aladin554/TODO-APP.git
+cd TODO-APP
 
 
 Install backend dependencies:
@@ -34,9 +34,6 @@ npm install
 
 
 4.Configure environment:
-
-Copy .env.example to .env:cp .env.example .env
-
 
 Update .env with database credentials and set:SANCTUM_STATEFUL_DOMAINS=localhost:8000
 SESSION_DOMAIN=localhost
