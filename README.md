@@ -4,7 +4,7 @@ To-Do List Application
 
 Backend: Laravel 12, PHP 8.2, Laravel Sanctum
 Frontend: Vue.js 3, Vue Router, Axios, Vite
-Database: MySQL/SQLite
+Database: MySQL
 Testing: PHPUnit (backend), Postman (API)
 Version Control: Git, GitHub
 
