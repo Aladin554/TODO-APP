@@ -14,7 +14,7 @@ Prerequisites
 PHP >= 8.2
 Composer
 Node.js >= 18
-MySQL or SQLite
+MySQL
 Git
 Postman (for API testing)
 
