@@ -1,61 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+To-Do List Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1.Technologies
 
-## About Laravel
+Backend: Laravel 12, PHP 8.2, Laravel Sanctum
+Frontend: Vue.js 3, Vue Router, Axios, Vite
+Database: MySQL/SQLite
+Testing: PHPUnit (backend), Postman (API)
+Version Control: Git, GitHub
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2.Setup Instructions
+Prerequisites
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+PHP >= 8.2
+Composer
+Node.js >= 18
+MySQL or SQLite
+Git
+Postman (for API testing)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+3.Installation
 
-## Learning Laravel
+Clone the repository:
+git clone https://github.com/yourusername/todo-list-app.git
+cd todo-list-app
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Install backend dependencies:
+composer install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Install frontend dependencies:
+npm install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+4.Configure environment:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+Copy .env.example to .env:cp .env.example .env
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Update .env with database credentials and set:SANCTUM_STATEFUL_DOMAINS=localhost:8000
+SESSION_DOMAIN=localhost
+VITE_PORT=5173
 
-## Code of Conduct
+Run migrations:
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Start the backend:
+php artisan serve
 
-## Security Vulnerabilities
+Build and run the frontend:
+npm run dev
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5.Access the application:
+Open http://localhost:8000 in your browser.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+6.API Endpoints
+The RESTful API provides the following endpoints, tested with Postman:
+
+POST
+/api/register
+Register a new user
+None
+
+POST
+/api/login
+Login and get token
+None
+
+GET
+/api/tasks
+List all tasks
+Sanctum
+
+POST
+/api/tasks
+Create a task
+Sanctum
+
+GET
+/api/tasks/{id}
+Show a task
+Sanctum
+
+PUT
+/api/tasks/{id}
+Update a task
+Sanctum
+
+DELETE
+/api/tasks/{id}
+Delete a task
+Sanctum
+
+7.Testing
+Backend Tests:
+
+Run PHPUnit tests to verify task CRUD and validation:php artisan test
+Tests in tests/Feature/TaskTest.php cover:
+Task creation (POST /api/tasks)
+Task updates (PUT /api/tasks/{id})
+Task deletion (DELETE /api/tasks/{id})
+Validation errors (e.g., missing title)
